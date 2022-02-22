@@ -2,21 +2,18 @@ Vue.createApp({
     data() {
         return {
             leNombre: 0,
-
-
         };
     },
     methods: {
         increment(number) {
             this.leNombre += number;
         }
-
     },
     computed: {
         indice() {
-            if (value == 7) {
+            if (this.leNombre == 7) {
                 return "Bravo, c'est gagner!";
-            } else if (value > 7) {
+            } else if (this.leNombre > 7) {
                 return 'Tu as dépassé le nbre mystère';
             } else {
                 return 'ESSAIE ENCORE';
@@ -25,9 +22,9 @@ Vue.createApp({
     },
     watch: {
         leNombre(value) {
-            if (timer = true) {
+            setTimeout(() => {
                 this.leNombre = 0;
-            }
+            }, 5000);
         }
     }
 
